@@ -1,1 +1,1 @@
-# Tema1-JavaScript
+# homework1-JavaScript

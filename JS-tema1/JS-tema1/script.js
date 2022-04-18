@@ -1,4 +1,4 @@
-/*Media Aritmetica 07.04
+//Media Aritmetica\\ 07.04
 var mathGrade = 10;
 var romanianGrade = 9.75;
 var biologyGrade = 8.8;
@@ -86,35 +86,25 @@ for (let iterateFrom = 0; iterateFrom < 16; iterateFrom++) {
 
 // 3. //
 
-const logArray = ["unu", "doi", "trei", "patru", "exemplu"];
+const logArray = ["unu", "doi", "trei", "patru"];
 logArray[0] = "unu";
 logArray[1] = "doi";
 logArray[2] = "trei";
 logArray[3] = "patru";
 
 //Folosind o structura repetitiva afiseaza elementele acestui array in consola
-//logArray.forEach((element) => console.log(element));
-
-for (let i = 0; i < logArray.length; i++) {
-  console.log(logArray[i]);
-}
+logArray.forEach((element) => console.log(element));
 
 // 4. //
 const sumArray = [152, 235, 325, 945, 25];
 //Folosind o structura repetitiva afiseaza in consola suma numerelor din acest array
 
-//*const initialValue = 0;
-//const sumInitial = sumArray.reduce(
-//  (previousValue, currentValue) => previousValue + currentValue,
-// initialValue
-//);
-//console.log(sumInitial);
-
-let sum = 0;
-for (let i = 0; i < sumArray.length; i++) {
-  sum += sumArray[i];
-}
-console.log(sum);
+const initialValue = 0;
+const sumInitial = sumArray.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+console.log(sumInitial);
 
 // 5. -de facut la sedinta urmatoare //
 let devSalaryIncreaseProcents = 20;
@@ -147,76 +137,7 @@ let objectToIterate = {
   ],
 };
 
-let newObject = {
-  name: objectToIterate.name,
-  positon: objectToIterate.position,
-  workers: [],
-};
-for (let i = 0; i < objectToIterate.workers.length; i++) {
-  const currentWorker = objectToIterate.workers[i];
-
-  const procentToIncrase =
-    currentWorkersPosition.position === "QA"
-      ? qaSalaryIncreaseProcents
-      : devSalaryIncreaseProcents;
-
-  const newSalary = (currentWorker.salary * procentToIncrase) / 100;
-
-  newObject.workers[i] = {
-    name: currentWorkersPosition.name,
-    position: currentWorkersPosition.salary,
-  };
-}
-
 //Folosind o structura repetitiva mareste salariu fiecarui angajat din obiectul de mai sus cu procentul aferent
 //pentru angajatii care au position: "DEV", mareste cu devSalaryIncreaseProcents
 //pentru angajatii care au position: "QA", mareste cu qaSalaryIncreaseProcents
 //Creaza un obiect nou exact cu acceasi structura insa array-ul workers sa fie modificat conform conditiilor de mai sus
-*/
-
-// TEMA 19.04
-
-// Foloseste obiectul masina creat la sesiune
-
-const myCar = {
-  marca: "Lexus",
-  model: "CT",
-  an: 2015,
-  pret: 25000,
-  numar: "GU000MW",
-  kilometraj: 300000,
-};
-
-// 2. Fa o functie, numita tuneCar, care primeste ca parametru un obiect, reprezentand o masina. Functia returneaza un obiect nou, fara a il modifica pe cel primit ca parametru. Obiectul returnat de functie are de doua ori mai putini km, iar pretul este cu 50% mai mare. La apelul functiei, paseaza ca valoare pentru parametru obiectul creat mai sus.
-
-function tuneCar(myCar) {
-  const myCar2 = Object.assign({}, myCar);
-  myCar2.kilometraj = myCar.kilometraj / 2;
-  myCar2.pret = myCar.pret * 1.5;
-  return myCar2;
-}
-const tunedCar = tuneCar(myCar);
-
-console.log(myCar);
-console.log(tunedCar);
-
-// 3. Folosind metodele existente pe obiectul Date, afiseaza consola ora curenta, sub urmatorul format: HH:MM:SS (ex: 21:07:34).
-
-let currentData = new Date();
-
-let hours = currentData.getHours();
-let minutes = currentData.getMinutes();
-let seconds = currentData.getSeconds();
-
-if (hours < 10) {
-  hours = "0" + hours;
-}
-if (minutes < 10) {
-  minutes = "0" + minutes;
-}
-if (seconds < 10) {
-  seconds = "0" + seconds;
-}
-let formattedHour = hours + ":" + minutes + ":" + seconds;
-
-console.log("Ex3: ", formattedHour);
